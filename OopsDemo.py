@@ -25,3 +25,5 @@ print(obj.summation())
 
 obj1 = Cal(4,5)
 print(obj1.summation())
+
+
