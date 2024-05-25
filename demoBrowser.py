@@ -10,34 +10,13 @@ from selenium.webdriver.chrome.service import Service
 #Firefoxdriver -> geckodriver
 
 #Pass above object value at service attribute
-driver = webdriver.Edge(service=service_obj)
+#driver = webdriver.Edge(service=service_obj)
 
-#driver = webdriver.Edge()
-driver.get("https://rahulshettyacademy.com")
+driver = webdriver.Chrome()
+driver.get("https://amzon.in")
 driver.maximize_window()
 print(driver.title)
 print(driver.current_url)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-time.sleep(2)
+time.sleep(4)
