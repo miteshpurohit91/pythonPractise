@@ -1,6 +1,7 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
 
 driver = webdriver.Chrome()
 driver.get("https://rahulshettyacademy.com/angularpractice/")
@@ -15,6 +16,17 @@ driver.find_element(By.ID,"exampleCheck1").click()
 
 #To create Xpath for any element: //tagname[@attribute= 'value']
 #To Create custom CSS selector: tagname[attribute=value"], #id, .classname
+
+#Static Dropdown --> Will use Select class for it, We can find element with help by
+#1. using index
+#2. using visible text
+#3. using value
+
+dropdown = Select(driver.find_element(By.ID, "exampleFormControlSelect1"))
+dropdown.select_by_index(1)
+dropdown.select_by_visible_text("Male")
+#dropdown.select_by_value()
+
 
 #driver.find_element(By.XPATH,"//input[@type='submit']").click()
 driver.find_element(By.CSS_SELECTOR,"input[type='submit']").click()
