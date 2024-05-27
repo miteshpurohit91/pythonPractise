@@ -32,6 +32,16 @@ for result in results:
 
 driver.find_element(By.CSS_SELECTOR,"img[alt='Cart']").click()
 driver.find_element(By.XPATH,"//button[text()='PROCEED TO CHECKOUT']").click()
+
+#SUM Validation
+prices = driver.find_elements(By.CSS_SELECTOR,"tr td:nth-child(5) p")
+sum = 0
+for price in prices:
+    sum = sum + int(price.text)          #48 +160 +
+
+print(sum)
+totalammount = int (driver.find_element(By.CSS_SELECTOR,".totAmt").text)
+
 driver.find_element(By.CSS_SELECTOR,"input[class='promoCode']").send_keys("rahulshettyacademy")
 driver.find_element(By.CSS_SELECTOR,".promoBtn").click()
 print(driver.find_element(By.CLASS_NAME,"promoInfo").text)
